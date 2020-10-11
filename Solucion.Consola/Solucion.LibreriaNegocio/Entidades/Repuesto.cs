@@ -49,6 +49,7 @@ namespace Solucion.LibreriaNegocio
         }
         public Categoria Categoria
         {
+            set { _categoria = value; }
             get { return _categoria;  }
         }
         //MÉTODOS

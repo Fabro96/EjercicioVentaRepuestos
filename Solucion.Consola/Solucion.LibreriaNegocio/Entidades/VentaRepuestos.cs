@@ -51,22 +51,62 @@ namespace Solucion.LibreriaNegocio
             this._listaProductos.Add(repuesto);
 
         }
-        public void QuitarRepuesto(int codigo)
+        public void QuitarRepuesto(int codigoRepuesto)
         {
-            throw new NotImplementedException();
+            Repuesto repuesto = this._listaProductos.SingleOrDefault(x => x.Codigo == codigoRepuesto);
+
+            if(repuesto != null)
+            {
+                this._listaProductos.Remove(repuesto);
+            }
+            else
+            {
+                throw new CodigoInexistenteException("El código que ingresó no se encuentra en la lista.");
+            }
         }
-        public void ModificarPrecio(int codigo, double precio)
+        public void ModificarPrecio(int codigoRepuesto, double precio)
         {
-            throw new NotImplementedException();
+            
+            foreach(Repuesto repuesto in _listaProductos)
+            {
+                if (repuesto != null && repuesto.Codigo == codigoRepuesto)
+                {
+                    repuesto.Precio = precio;
+                }
+                else
+                {
+                    throw new CodigoInexistenteException("El código que ingresó no se encuentra en la lista.");
+                }
+
+            }
+
+            //if(repuesto != null)
+            //{
+            //    repuesto.Precio = precio;
+            //}
+            //else
+            //{
+            //    throw new CodigoInexistenteException("El código que ingresó no se encuentra en la lista.");
+            //}
         }
         public void AgregarStock(int i, int ii)
         {
             throw new NotImplementedException();
         }
-        public List<Repuesto> TraerPorCategoria(int codigo)
-        {
-            throw new NotImplementedException();
-        }
+        //public List<Repuesto> TraerPorCategoria(int codigoCategoria)
+        //{
+        //    //Repuesto repuesto = this._listaProductos.SingleOrDefault(x => x.Categoria.Codigo == codigoCategoria);
+
+        //    foreach(Repuesto repuesto in _listaProductos)
+        //    {
+        //        if(repuesto.Categoria.Codigo == codigoCategoria)
+        //        {
+        //            return _listaProductos;
+        //        }
+        //    }
+            
+
+        //}
         public void ListarRepuestos()
         {
             foreach(Repuesto repuesto in _listaProductos)

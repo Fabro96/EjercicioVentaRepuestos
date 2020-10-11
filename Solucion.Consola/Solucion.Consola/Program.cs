@@ -111,7 +111,16 @@ namespace Solucion.Consola
                 if (vtaRep.TieneRepuesto > 0)
                 {
                     vtaRep.ListarRepuestos();
+                    int codigo = ConsolaHelper.PedirCodigoRepuesto(0, 999999);
+
+                    vtaRep.QuitarRepuesto(codigo);
+
+                    Console.WriteLine("\nEl Respuesto seleccionado a sido eliminado correctamente.");
                 }
+            }
+            catch (CodigoInexistenteException ex)
+            {
+                Console.WriteLine(ex.Message);
             }
             catch (NotImplementedException ex)
             {
@@ -122,7 +131,25 @@ namespace Solucion.Consola
         }
         public static void ModificarPrecio(VentaRepuestos vtaRep)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Console.WriteLine("MODIFICAR PRECIO.\n");
+                vtaRep.ListarRepuestos();
+                int codigo = ConsolaHelper.PedirCodigoRepuesto(0, 999999);
+                double precio = ConsolaHelper.PedirPrecio(1, 99999);
+                vtaRep.ModificarPrecio(codigo, precio);
+                Console.WriteLine("\nPrecio del codigo " + codigo + " ha sido modificado correctamente.");
+
+            }
+            catch (SinStockException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (CodigoInexistenteException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            Console.ReadKey();
         }
         public static void AgregarStock(VentaRepuestos vtaRep)
         {
@@ -134,7 +161,18 @@ namespace Solucion.Consola
         }
         public static void ListarRepuestosPorCategoria(VentaRepuestos vtaRep)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Console.WriteLine("REPUESTOS POR CATEGORIA.\n");
+                int codigoCategoria = ConsolaHelper.PedirCodigoCategoria(1, 3);
+                //vtaRep.TraerPorCategoria(codigoCategoria);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            Console.ReadKey();
         }
         public static void ListarRepuestos(VentaRepuestos vtaRep)
         {
