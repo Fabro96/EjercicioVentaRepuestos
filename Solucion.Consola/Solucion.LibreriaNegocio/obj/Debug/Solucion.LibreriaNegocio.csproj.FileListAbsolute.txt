@@ -1,0 +1,6 @@
+C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\EjercicioVentaRepuestos\Solucion.Consola\Solucion.LibreriaNegocio\bin\Debug\Solucion.LibreriaNegocio.dll
+C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\EjercicioVentaRepuestos\Solucion.Consola\Solucion.LibreriaNegocio\bin\Debug\Solucion.LibreriaNegocio.pdb
+C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\EjercicioVentaRepuestos\Solucion.Consola\Solucion.LibreriaNegocio\obj\Debug\Solucion.LibreriaNegocio.csprojAssemblyReference.cache
+C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\EjercicioVentaRepuestos\Solucion.Consola\Solucion.LibreriaNegocio\obj\Debug\Solucion.LibreriaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\EjercicioVentaRepuestos\Solucion.Consola\Solucion.LibreriaNegocio\obj\Debug\Solucion.LibreriaNegocio.dll
+C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\EjercicioVentaRepuestos\Solucion.Consola\Solucion.LibreriaNegocio\obj\Debug\Solucion.LibreriaNegocio.pdb
