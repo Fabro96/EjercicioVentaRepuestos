@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,10 +38,18 @@ namespace Solucion.LibreriaNegocio
             set { _nombre = value; }
             get { return _nombre;  }
         }
-        //MÉTODOS
-        public void AgregarRepuesto(Repuesto repuesto)
+        public int TieneRepuesto
         {
-            throw new NotImplementedException();
+            get { return _listaProductos.Count; }
+        }
+        //MÉTODOS
+        public void AgregarRepuesto(int codigo, string nombre, double precio, int stock, int codigoCategoria)
+        {
+            
+            Repuesto repuesto = new Repuesto(codigo, nombre, precio, stock, codigoCategoria);
+
+            this._listaProductos.Add(repuesto);
+
         }
         public void QuitarRepuesto(int codigo)
         {
@@ -57,6 +66,14 @@ namespace Solucion.LibreriaNegocio
         public List<Repuesto> TraerPorCategoria(int codigo)
         {
             throw new NotImplementedException();
+        }
+        public void ListarRepuestos()
+        {
+            foreach(Repuesto repuesto in _listaProductos)
+            {
+                Console.WriteLine(repuesto.ToString());
+            }
+
         }
 
     }

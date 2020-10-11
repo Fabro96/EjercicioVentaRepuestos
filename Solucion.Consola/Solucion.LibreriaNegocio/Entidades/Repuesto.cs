@@ -18,13 +18,13 @@ namespace Solucion.LibreriaNegocio
 
         //CONSTRUCTORES
         public Repuesto() { }
-        public Repuesto(int codigo, string nombre, double precio, int stock)
+        public Repuesto(int codigo, string nombre, double precio, int stock, int codigoCategoria)
         {
             this._codigo = codigo;
             this._nombre = nombre;
             this._precio = precio;
             this._stock = stock;
-            this._categoria = new Categoria();
+            this._categoria = CategoriaHelper.GetCategoriaPorCodigo(codigoCategoria);
         }
 
         //PROPIEDADES
@@ -49,13 +49,13 @@ namespace Solucion.LibreriaNegocio
         }
         public Categoria Categoria
         {
-            set { _categoria = value; }
             get { return _categoria;  }
         }
         //MÉTODOS
         public override string ToString()
         {
-            return base.ToString();
+            return string.Format("{0} - {1} $ {2},  Stock: {3}, Categoría: {4}", this._codigo, this._nombre, this._precio,
+                                                                                                this._stock, this._categoria.Nombre);
         }
 
     }
