@@ -117,6 +117,10 @@ namespace Solucion.Consola
 
                     Console.WriteLine("\nEl Respuesto seleccionado a sido eliminado correctamente.");
                 }
+                else
+                {
+                    Console.WriteLine("No hay stock para quitar.");
+                }
             }
             catch (CodigoInexistenteException ex)
             {
@@ -133,12 +137,19 @@ namespace Solucion.Consola
         {
             try
             {
-                Console.WriteLine("MODIFICAR PRECIO.\n");
-                vtaRep.ListarRepuestos();
-                int codigo = ConsolaHelper.PedirCodigoRepuesto(0, 999999);
-                double precio = ConsolaHelper.PedirPrecio(1, 99999);
-                vtaRep.ModificarPrecio(codigo, precio);
-                Console.WriteLine("\nPrecio del codigo " + codigo + " ha sido modificado correctamente.");
+                if(vtaRep.TieneRepuesto > 0)
+                {
+                    Console.WriteLine("MODIFICAR PRECIO.\n");
+                    vtaRep.ListarRepuestos();
+                    int codigo = ConsolaHelper.PedirCodigoRepuesto(0, 999999);
+                    double precio = ConsolaHelper.PedirPrecio(1, 99999);
+                    vtaRep.ModificarPrecio(codigo, precio);
+                    Console.WriteLine("\nPrecio del codigo " + codigo + " ha sido modificado correctamente.");
+                }
+                else
+                {
+                    Console.WriteLine("No hay repuesto a los cuales haya que cambiar el precio.");
+                }
 
             }
             catch (SinStockException ex)
@@ -163,9 +174,17 @@ namespace Solucion.Consola
         {
             try
             {
-                Console.WriteLine("REPUESTOS POR CATEGORIA.\n");
-                int codigoCategoria = ConsolaHelper.PedirCodigoCategoria(1, 3);
-                //vtaRep.TraerPorCategoria(codigoCategoria);
+                if(vtaRep.TieneRepuesto > 0)
+                {
+                    Console.WriteLine("REPUESTOS POR CATEGORIA.\n");
+                    int codigoCategoria = ConsolaHelper.PedirCodigoCategoria(1, 3);
+                    //vtaRep.TraerPorCategoria(codigoCategoria);
+                }
+                else
+                {
+                    Console.WriteLine("No hay repuestos cargados en el sistema.");
+                }
+                
 
             }
             catch (Exception ex)
